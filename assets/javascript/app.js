@@ -3,21 +3,19 @@ $(document).ready(function(){
     var gif = ["The Office", "Crying", "Cats", "Dog", "New Girl"]
     renderButtons()
     function renderButtons() {
-        // Deleting the movies prior to adding new movies
-        // (this is necessary otherwise we will have repeat buttons)
+        
         $(".gifs-view").empty();
-        // Looping through the array of movies
+  
         for (var i = 0; i < gif.length; i++) {
-          // Then dynamicaly generating buttons for each movie in the array
-          // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
+
           var a = $("<button>");
-          // Adding a class
+
           a.addClass("gifButton");
-          // Added a data-attribute
+    
           a.attr("data-name", gif[i]);
-          // Provided the initial button text
+          
           a.text(gif[i]);
-          // Added the button to the HTML
+       
           $(".gifs-view").append(a);
         }
       }
@@ -25,12 +23,12 @@ $(document).ready(function(){
 
       $("#add-gif").on("click", function(event) {
         event.preventDefault();
-        // This line grabs the input from the textbox
+       
         var giffi = $("#gif-input").val();
         $("#gif-input").val("");
-        // The movie from the textbox is then added to our array
+       
         gif.push(giffi);
-        // Calling renderButtons which handles the processing of our movie array
+       
         renderButtons();
     });
 
